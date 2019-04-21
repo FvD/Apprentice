@@ -2,7 +2,7 @@
 " Author:       Romain Lafourcade (romainlafourcade@gmail.com)
 " Description:  Essentially a streamlining and conversion to xterm colors of
 "               'sorcerer' by Jeet Sukumaran (jeetsukumaran@gmailcom)
-" Last Change:  2017 Oct 07
+" Last Change:  2019 apr 20
 
 " MADE-UP NAME    HEX        RGB                   XTERM  ANSI
 " ========================================================================
@@ -36,13 +36,13 @@ endif
 let colors_name = "apprentice"
 
 if ($TERM =~ '256' || &t_Co >= 256) || has("gui_running")
-  hi Normal           ctermbg=235  ctermfg=250  guibg=#262626 guifg=#bcbcbc cterm=NONE           gui=NONE
-  hi Terminal         ctermbg=235  ctermfg=250  guibg=#262626 guifg=#bcbcbc cterm=NONE           gui=NONE
-  hi LineNr           ctermbg=234  ctermfg=242  guibg=#1c1c1c guifg=#6c6c6c cterm=NONE           gui=NONE
-  hi FoldColumn       ctermbg=234  ctermfg=242  guibg=#1c1c1c guifg=#6c6c6c cterm=NONE           gui=NONE
-  hi Folded           ctermbg=234  ctermfg=242  guibg=#1c1c1c guifg=#6c6c6c cterm=NONE           gui=NONE
-  hi MatchParen       ctermbg=234  ctermfg=229  guibg=#1c1c1c guifg=#ffffaf cterm=NONE           gui=NONE
-  hi signColumn       ctermbg=234  ctermfg=242  guibg=#1c1c1c guifg=#6c6c6c cterm=NONE           gui=NONE
+  hi Normal         ctermbg=235  ctermfg=250  guibg=#262626 guifg=#bcbcbc cterm=NONE           gui=NONE
+  hi Terminal       ctermbg=235  ctermfg=250  guibg=#262626 guifg=#bcbcbc cterm=NONE           gui=NONE
+  hi LineNr         ctermbg=234  ctermfg=242  guibg=#1c1c1c guifg=#6c6c6c cterm=NONE           gui=NONE
+  hi FoldColumn     ctermbg=234  ctermfg=242  guibg=#1c1c1c guifg=#6c6c6c cterm=NONE           gui=NONE
+  hi Folded         ctermbg=234  ctermfg=242  guibg=#1c1c1c guifg=#6c6c6c cterm=NONE           gui=NONE
+  hi MatchParen     ctermbg=234  ctermfg=229  guibg=#1c1c1c guifg=#ffffaf cterm=NONE           gui=NONE
+  hi signColumn     ctermbg=234  ctermfg=242  guibg=#1c1c1c guifg=#6c6c6c cterm=NONE           gui=NONE
 
   set background=dark
 
@@ -94,9 +94,6 @@ if ($TERM =~ '256' || &t_Co >= 256) || has("gui_running")
   hi Visual           ctermbg=235  ctermfg=110  guibg=#262626 guifg=#8fafd7 cterm=reverse        gui=reverse
   hi VisualNOS        ctermbg=NONE ctermfg=NONE guibg=NONE    guifg=NONE    cterm=underline      gui=underline
 
-  hi VertSplit        ctermbg=238  ctermfg=238  guibg=#444444 guifg=#444444 cterm=NONE           gui=NONE
-  hi WildMenu         ctermbg=110  ctermfg=235  guibg=#8fafd7 guifg=#262626 cterm=NONE           gui=NONE
-
   hi Function         ctermbg=NONE ctermfg=229  guibg=NONE    guifg=#ffffaf cterm=NONE           gui=NONE
   hi SpecialKey       ctermbg=NONE ctermfg=240  guibg=NONE    guifg=#585858 cterm=NONE           gui=NONE
   hi Title            ctermbg=NONE ctermfg=231  guibg=NONE    guifg=#ffffff cterm=NONE           gui=NONE
@@ -109,21 +106,24 @@ if ($TERM =~ '256' || &t_Co >= 256) || has("gui_running")
   hi IncSearch        ctermbg=131  ctermfg=235  guibg=#af5f5f guifg=#262626 cterm=NONE           gui=NONE
   hi Search           ctermbg=229  ctermfg=235  guibg=#ffffaf guifg=#262626 cterm=NONE           gui=NONE
 
+  hi IncSearch        ctermbg=131  ctermfg=235  guibg=#af5f5f guifg=#262626 cterm=NONE           gui=NONE
+  hi Search           ctermbg=229  ctermfg=235  guibg=#ffffaf guifg=#262626 cterm=NONE           gui=NONE
+
   hi Directory        ctermbg=NONE ctermfg=73   guibg=NONE    guifg=#5fafaf cterm=NONE           gui=NONE
 
   hi debugPC          ctermbg=67                guibg=#5f87af
   hi debugBreakpoint  ctermbg=131               guibg=#af5f5f
 
   if has("gui_running")
-    hi SpellBad       ctermbg=NONE ctermfg=131  guibg=NONE    guifg=NONE    cterm=undercurl      gui=undercurl guisp=#af5f5f
-    hi SpellCap       ctermbg=NONE ctermfg=73   guibg=NONE    guifg=NONE    cterm=undercurl      gui=undercurl guisp=#5fafaf
-    hi SpellLocal     ctermbg=NONE ctermfg=65   guibg=NONE    guifg=NONE    cterm=undercurl      gui=undercurl guisp=#5f875f
-    hi SpellRare      ctermbg=NONE ctermfg=208  guibg=NONE    guifg=NONE    cterm=undercurl      gui=undercurl guisp=#ff8700
+   hi SpellBad        ctermbg=NONE ctermfg=131  guibg=NONE    guifg=NONE    cterm=undercurl      gui=undercurl guisp=#af5f5f
+   hi SpellCap        ctermbg=NONE ctermfg=73   guibg=NONE    guifg=NONE    cterm=undercurl      gui=undercurl guisp=#5fafaf
+   hi SpellLocal      ctermbg=NONE ctermfg=65   guibg=NONE    guifg=NONE    cterm=undercurl      gui=undercurl guisp=#5f875f
+   hi SpellRare       ctermbg=NONE ctermfg=208  guibg=NONE    guifg=NONE    cterm=undercurl      gui=undercurl guisp=#ff8700
   else
-    hi SpellBad       ctermbg=NONE ctermfg=131  guibg=NONE    guifg=#af5f5f cterm=undercurl      gui=undercurl guisp=NONE
-    hi SpellCap       ctermbg=NONE ctermfg=73   guibg=NONE    guifg=#5fafaf cterm=undercurl      gui=undercurl guisp=NONE
-    hi SpellLocal     ctermbg=NONE ctermfg=65   guibg=NONE    guifg=#5f875f cterm=undercurl      gui=undercurl guisp=NONE
-    hi SpellRare      ctermbg=NONE ctermfg=208  guibg=NONE    guifg=#ff8700 cterm=undercurl      gui=undercurl guisp=NONE
+   hi SpellBad        ctermbg=NONE ctermfg=131  guibg=NONE    guifg=#af5f5f cterm=undercurl      gui=undercurl guisp=NONE
+   hi SpellCap        ctermbg=NONE ctermfg=73   guibg=NONE    guifg=#5fafaf cterm=undercurl      gui=undercurl guisp=NONE
+   hi SpellLocal      ctermbg=NONE ctermfg=65   guibg=NONE    guifg=#5f875f cterm=undercurl      gui=undercurl guisp=NONE
+   hi SpellRare       ctermbg=NONE ctermfg=208  guibg=NONE    guifg=#ff8700 cterm=undercurl      gui=undercurl guisp=NONE
   endif
 
   hi ColorColumn      ctermbg=234  ctermfg=NONE guibg=#1c1c1c guifg=NONE    cterm=NONE           gui=NONE
@@ -282,3 +282,22 @@ let g:terminal_ansi_colors = [
             \ '#5fafaf',
             \ '#ffffff'
             \ ]
+
+if has("nvim") && exists("&termguicolors") && &termguicolors
+  let g:terminal_color_0    = "#1C1C1C"
+  let g:terminal_color_8    = "#444444"
+  let g:terminal_color_1    = "#AF5F5F"
+  let g:terminal_color_9    = "#FF8700"
+  let g:terminal_color_2    = "#5F875F"
+  let g:terminal_color_10   = "#87AF87"
+  let g:terminal_color_3    = "#87875F"
+  let g:terminal_color_11   = "#FFFFAF"
+  let g:terminal_color_4    = "#5F87AF"
+  let g:terminal_color_12   = "#8FAFD7"
+  let g:terminal_color_5    = "#5F5F87"
+  let g:terminal_color_13   = "#8787AF"
+  let g:terminal_color_6    = "#5F8787"
+  let g:terminal_color_14   = "#5FAFAF"
+  let g:terminal_color_7    = "#6C6C6C"
+  let g:terminal_color_15   = "#FFFFFF"
+endif
